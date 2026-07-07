@@ -40,17 +40,40 @@ async function loadProfile()
         }
         const repoData = await repoResponse.json();
         let repoHTML = "";
-        for (const repo of repoData)
+        if(repoData.length === 0)
         {
-            repoHTML += `<h3>${repo.name}</h3>`;
+            repoHTML =
+            "<p>No repositories found.</p>";
         }
-        profile.innerHTML += repoHTML;
+        for (const repo of repoData.slice(0, 5))
+        {
+            repoHTML += `
+                        <div class="repo-card">
+                            <h3>${repo.name}</h3>
+                            <p>
+                                Language :
+                                ${repo.language || "Not Specified"}
+                            </p>
+                            <p>
+                                ⭐ Stars :
+                                ${repo.stargazers_count}
+                            </p>
+                            <p>
+                                🍴 Forks :
+                                ${repo.forks_count}
+                            </p>
+                            <a href = "${repo.html_url}" target = "_blank">
+                                View Repository
+                            </a>
+                        </div>`;
+        }
+        profile.innerHTML += `<div class = "repo-container">${repoHTML}</div>`;
 
     }
     catch(error)
     {
         profile.innerHTML = 
-        `<h2>User not found </h2>`
+        `<h2>${error.message}</h2>`
     }
     
 }

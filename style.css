@@ -1,4 +1,23 @@
-*
+.repo-card
 {
-    display: flex;
+.repo-card
+{
+    width:250px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    border:2px solid cyan;
+    border-radius:10px;
+    padding:20px;
+    background:#1e1e1e;
+    color:white;
+}
+}
+
+.repo-container
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:30px;
 }
