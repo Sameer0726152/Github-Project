@@ -6,19 +6,24 @@
         href = "style.css">
     </head>
     <body>
-        <h1>GitHub Profile Viewer</h1>
 
-        <input
-        id="username"
-        placeholder="Enter GitHub Username">
-
-        <button id="search">
-            Search
-        </button>
+        <div class="search-panel">
+            <h1>GitHub Profile Viewer</h1>
+            <div class="search-box">
+                <input id="username" placeholder="Enter GitHub Username">
+                <button id="search">Search</button>
+            </div>
+        </div>
+        <div id="loader">
+                <div class="spinner"></div>
+            </div>
 
         <div id="profile">
-
+            
         </div>
+        <div id="overlay">
+                <img id="overlay-image">
+            </div>
         <script src="script.js"></script>   
     </body>
 </html>
