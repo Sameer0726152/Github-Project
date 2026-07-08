@@ -22,7 +22,10 @@ async function loadProfile()
             `<h2 class = "error">Please enter a Username</h2>`;
             return;
         }
+        searchBtn.disabled = true;
+        searchBtn.innerText = "Searching...";
         loader.style.display = "flex";
+        profile.style.opacity = "0";
         const url = `https://api.github.com/users/${username}`; 
         const response = await fetch(url);
         if (!response.ok)
@@ -62,6 +65,8 @@ async function loadProfile()
             </div>
         </div>
         `;
+        profile.style.transition = ".5s";
+        profile.style.opacity = "1";
 
         // Adding Repository Cards
 
@@ -75,10 +80,9 @@ async function loadProfile()
         let repoHTML = "";
         if(repoData.length === 0)
         {
-            repoHTML =
-            "<p>No repositories found.</p>";
+            repoHTML = "<p>No repositories found.</p>";
         }
-        for (const repo of repoData.slice(0, 5))
+        for (const repo of repoData.slice(0, 6))
         {
             repoHTML += `
                         <div class="repo-card">
@@ -117,6 +121,8 @@ async function loadProfile()
     finally
     {
         loader.style.display = "none";
+        searchBtn.disabled = false;
+        searchBtn.innerText = "Search";
     }
     
 }
