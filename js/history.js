@@ -1,0 +1,38 @@
+function saveHistory(username)
+{
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+    if(!history.includes(username))
+    {
+        history.unshift(username);
+        history = history.slice(0, 5);
+        localStorage.setItem("history", JSON.stringify(history));   
+    }
+    displayHistory();
+}
+
+function displayHistory()
+{
+    const historyList = document.querySelector("#history-list");
+    historyList.innerHTML = "";
+    const history = JSON.parse(localStorage.getItem("history")) || [];
+    let html = "";
+    for (const item of history)
+    {
+        html += 
+        `
+        <div class = "history-item" data-user = "${item}">
+        ${item}
+        </div>
+        `;
+    }
+    historyList.innerHTML = html;
+}
+document.addEventListener("click", function(event)
+{
+    if(event.target.classList.contains("history-item"))
+    {
+        usernameInput.value = event.target.dataset.user;
+        loadProfile();
+    }
+});
+displayHistory();
