@@ -1,5 +1,4 @@
 const usernameInput = document.querySelector("#username")
-let allRepositories = [];
 
 searchBtn.addEventListener("click", loadProfile);
 usernameInput.addEventListener("keydown", function(event)
@@ -25,9 +24,10 @@ async function loadProfile()
         const data = await getUser(username);
         displayProfile(data);
         const repoData = await getRepositories(username);
-        allRepositories = repoData; 
+        totalRepositories = repoData; 
         displayRepositories(repoData);
-        setupRepositorySearch();    
+        setupRepositorySearch();
+        setupRepositorySorting(); 
         saveHistory(username);
         initializeOverlay();
     }
