@@ -1,6 +1,10 @@
 let totalRepositories = [];
-function displayRepositories(repositories)
+export function displayRepositories(repositories)
 {
+    if(totalRepositories.length === 0)
+    {
+        totalRepositories = repositories;
+    }
     const repoContainer = document.querySelector(".repo-container");
     let repoHTML = "";
         if(repositories.length === 0)
@@ -67,7 +71,7 @@ function displayAllRepositories(repositories)
         repoContainer.innerHTML = repoHTML;
 }
 
-function setupRepositorySearch()
+export function setupRepositorySearch()
 {
     const repoSearch = document.querySelector("#repo-search");
         repoSearch.addEventListener("input", function()
@@ -81,7 +85,7 @@ function setupRepositorySearch()
         });
 }
 
-function setupRepositorySorting()
+export function setupRepositorySorting()
 {
     const sortSelect = document.querySelector("#sort-repositories");
     sortSelect.addEventListener("change", function()

@@ -1,13 +1,13 @@
 const loader = document.querySelector("#loader");
-const searchBtn = document.querySelector("#search");
-function showLoader()
+export const searchBtn = document.querySelector("#search");
+export function showLoader()
 {
     loader.style.display = "flex";
     searchBtn.disabled = true;
     searchBtn.innerText = "Searching...";
 }
 
-function hideLoader()
+export function hideLoader()
 {
     loader.style.display = "none";
     searchBtn.disabled = false;

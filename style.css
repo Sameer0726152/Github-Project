@@ -15,7 +15,8 @@ body
     border-radius: 20px;
     background: rgba(255,255,255,.08);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.15); 
+    box-shadow: -5px -5px 15px rgba(122, 124, 124, 0.5), 5px 5px 15px rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1), -5px -5px 15px rgba(122, 124, 124, 0.5);
 }
 
 .search-panel h1
@@ -48,7 +49,7 @@ body
 #search
 {
     padding: 15px 30px;
-    border: 2px solid cyan;
+    box-shadow: -3px -3px 4px rgba(122, 124, 124, 0.5), 3px 3px 4px rgba(0, 0, 0, 1), 3px 3px 4px rgba(0, 0, 0, 1), -3px -3px 4px rgba(122, 124, 124, 0.5);
     border-radius: 12px;
     background: cyan;
     color: black;
@@ -82,7 +83,7 @@ body
 .history-item
 {
     background:#222;
-    border:2px solid cyan;
+    box-shadow: -3px -3px 4px rgba(122, 124, 124, 0.5), 3px 3px 4px rgba(0, 0, 0, 1), 3px 3px 4px rgba(0, 0, 0, 1), -3px -3px 4px rgba(122, 124, 124, 0.5);
     color:white;
     padding:10px 20px;
     border-radius:30px;
@@ -141,7 +142,7 @@ body
     height:180px;
     border-radius:50%;
     margin-right:30px;
-    border:3px solid cyan;
+    box-shadow: -5px -5px 15px rgba(122, 124, 124, 0.5), 5px 5px 15px rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1), -5px -5px 15px rgba(122, 124, 124, 0.5);
 }
 
 #profile
@@ -197,7 +198,7 @@ body
     text-align: center;
     justify-content: center;
     place-items: center;
-    border: 2px solid cyan;
+    box-shadow: -5px -5px 15px rgba(122, 124, 124, 0.5), 5px 5px 15px rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1), -5px -5px 15px rgba(122, 124, 124, 0.5);
     transition: .3s;
 }
 
@@ -205,6 +206,7 @@ body
 {
     transform: translateY(-8px);
     box-shadow: 0 0 20px cyan;
+    background: rgb(18, 18, 18);
 }
 
 .repo-container
@@ -219,11 +221,11 @@ body
 
 .repo-card
 {
-    width: 90%;
+    width: 80%;
     padding:20px;
     background:#1e1e1e;
     border-radius:12px;
-    border:2px solid cyan;
+    box-shadow: -5px -5px 15px rgba(122, 124, 124, 0.5), 5px 5px 15px rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1), -5px -5px 15px rgba(122, 124, 124, 0.5);
     display:flex;
     flex-direction:column;
     gap:12px;
@@ -246,6 +248,7 @@ body
 {
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 0 25px cyan;
+    background: rgb(18, 18, 18);
 }
 
 .reponame
@@ -263,13 +266,14 @@ body
     margin: 20px 0;
     display: flex;
     justify-content: flex-start;
+    
 }
 
 #sort-repositories
 {
     padding: 12px 18px;
     font-size: 16px;
-    border: 2px solid cyan;
+    box-shadow: -5px -5px 15px rgba(122, 124, 124, 0.5), 5px 5px 15px rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1), -5px -5px 15px rgba(122, 124, 124, 0.5);
     border-radius: 10px;
     background: #1e1e1e;
     color: cyan;
@@ -323,8 +327,8 @@ body
     padding:15px;
     font-size:18px;
     border-radius:12px;
-    border:2px solid cyan;
-    outline:none;
+    box-shadow: -5px -5px 15px rgba(122, 124, 124, 0.5), 5px 5px 15px rgba(0, 0, 0, 1), 5px 5px 15px rgba(0, 0, 0, 1), -5px -5px 15px rgba(122, 124, 124, 0.5);
+    outline: none;
     background:#1b1b1b;
     color:white;
 }

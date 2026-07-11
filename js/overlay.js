@@ -9,7 +9,7 @@ overlayImage.addEventListener("click", function(event)
     event.stopPropagation();
 });
 
-function initializeOverlay()
+export default function initializeOverlay()
 {
     const avatar = document.querySelector(".avatar");
     if(!avatar)

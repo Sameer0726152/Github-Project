@@ -1,5 +1,5 @@
 const profile = document.querySelector("#profile");
-function displayProfile(data)
+export default function displayProfile(data)
 {
 profile.innerHTML = 
         `

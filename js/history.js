@@ -1,4 +1,4 @@
-function saveHistory(username)
+export function saveHistory(username)
 {
     let history = JSON.parse(localStorage.getItem("history")) || [];
     if(!history.includes(username))
@@ -10,7 +10,7 @@ function saveHistory(username)
     displayHistory();
 }
 
-function displayHistory()
+export function displayHistory()
 {
     const historyList = document.querySelector("#history-list");
     historyList.innerHTML = "";
@@ -27,12 +27,14 @@ function displayHistory()
     }
     historyList.innerHTML = html;
 }
-document.addEventListener("click", function(event)
+export function setupHistory(onHistoryClick)
 {
-    if(event.target.classList.contains("history-item"))
+    document.addEventListener("click", function(event)
     {
-        usernameInput.value = event.target.dataset.user;
-        loadProfile();
-    }
-});
-displayHistory();
+        if(event.target.classList.contains("history-item"))
+        {
+            const username = event.target.dataset.user;
+            onHistoryClick(username);
+        }
+    });
+}

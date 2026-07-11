@@ -1,4 +1,4 @@
-async function getUser(username)
+export async function getUser(username)
 {
     const url = `https://api.github.com/users/${username}`; 
     const response = await fetch(url);
@@ -9,7 +9,7 @@ async function getUser(username)
     return await response.json();
 }
 
-async function getRepositories(username)
+export async function getRepositories(username)
 {
     const repoURL = `https://api.github.com/users/${username}/repos`;
     const repoResponse = await fetch(repoURL);
