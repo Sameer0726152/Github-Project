@@ -30,7 +30,7 @@ A simple front-end project that lets you search for any GitHub username and view
     ├── app.js            # App entry point, wires up event listeners and orchestrates the search flow
     ├── github.js         # Handles GitHub API requests (user + repos)
     ├── profile.js        # Renders the profile section
-    ├── repositories.js   # Renders and filters the repository list
+    ├── repositories.js   # Renders, sorts and filters the repository list
     ├── history.js         # Manages recent search history (localStorage)
     ├── overlay.js         # Avatar image lightbox/overlay logic
     └── ui.js              # Loader / button state helpers
