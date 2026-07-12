@@ -9,20 +9,22 @@ import {displayRepositories, setupRepositorySearch, setupRepositorySorting} from
 const usernameInput = document.querySelector("#username")
 const profile = document.querySelector("#profile");
 
-searchBtn.addEventListener("click", loadProfile);
+searchBtn.addEventListener("click", function()
+{
+    loadProfile(usernameInput.value.trim());
+});
 usernameInput.addEventListener("keydown", function(event)
 {
     if(event.key === "Enter")
     {
-        loadProfile();
+        loadProfile(usernameInput.value.trim());
     }
 });
 
-async function loadProfile()
+async function loadProfile(username)
 {
     try
     {
-        const username = usernameInput.value.trim();
         if(!username)
         {
             profile.innerHTML = 
@@ -41,7 +43,7 @@ async function loadProfile()
         setupHistory(function(username)
         {
             usernameInput.value = username;
-            loadProfile();
+            loadProfile(username);
         });
         initializeOverlay();
     }
